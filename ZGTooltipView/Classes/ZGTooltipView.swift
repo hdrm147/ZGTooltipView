@@ -108,12 +108,12 @@ open class ZGTooltipView: UIView {
         addSubview(contentView)
 
         for (fromAttr, toAttr) in [
-            NSLayoutAttribute.top: NSLayoutAttribute.topMargin,
-            NSLayoutAttribute.right: NSLayoutAttribute.rightMargin,
-            NSLayoutAttribute.bottom: NSLayoutAttribute.bottomMargin,
-            NSLayoutAttribute.left: NSLayoutAttribute.leftMargin,
+            NSLayoutConstraint.Attribute.top: NSLayoutConstraint.Attribute.topMargin,
+            NSLayoutConstraint.Attribute.right: NSLayoutConstraint.Attribute.rightMargin,
+            NSLayoutConstraint.Attribute.bottom: NSLayoutConstraint.Attribute.bottomMargin,
+            NSLayoutConstraint.Attribute.left: NSLayoutConstraint.Attribute.leftMargin,
         ] {
-            addConstraint(NSLayoutConstraint(item: contentView, attribute: fromAttr, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: toAttr, multiplier: 1, constant: 0))
+            addConstraint(NSLayoutConstraint(item: contentView, attribute: fromAttr, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: toAttr, multiplier: 1, constant: 0))
         }
     }
 
